@@ -1,0 +1,834 @@
+[
+  {
+    "id": "T01",
+    "system": "牽引系統",
+    "symptom": "CMS顯示T字燈號消失 (TCU離線)",
+    "solution": "1. 確認總故障燈是否為紅燈，及CMS「電源」頁面確認牽引供電750V是否正常。\n2. 若總故障燈非紅燈且牽引供電正常，按壓「TCU錯誤復位」。\n3. 若牽引供電異常，則轉至「集電弓無法上升」流程。\n4. 若T字燈號仍消失，行駛至端點站執行重開機。\n5. 重開機後若1組TCU離線【WD2】；2組以上離線【WD1】。",
+    "decision": "WD1, WD2",
+    [cite_start]"source": "P.4 [cite: 36-45]"
+  },
+  {
+    "id": "T02",
+    "system": "牽引系統",
+    "symptom": "無牽引動力，總故障燈亮紅燈",
+    "solution": "1. 確認CMS顯示之MC、車門、供電、ATP是否正常。\n2. 按壓「TCU錯誤復位」。\n3. 確認安全煞車已復歸、主控制器離開停機檔位。\n4. 授權月台側開門訊號，CMS執行「開啟全部車門」開關一次。\n5. 無效則執行重開機。\n6. 仍無效【WD1】，執行列車救援及降級運轉。",
+    "decision": "WD1",
+    [cite_start]"source": "P.5 [cite: 51-59]"
+  },
+  {
+    "id": "T03",
+    "system": "牽引系統",
+    "symptom": "EB1/2作動，列車無牽引動力",
+    "solution": "1. 重置主控制器(移至停機，放開DSD，再回煞車檔位)重複4-5次。\n2. 站間：授權按壓「降級模式」嘗試移動。若能移動以10kph至下游車站重開機。\n3. 站內/無法移動：直接執行重開機。\n4. 無效【WD1】執行列車救援。",
+    "decision": "WD1",
+    [cite_start]"source": "P.6 [cite: 64-78]"
+  },
+  {
+    "id": "T04",
+    "system": "牽引系統",
+    "symptom": "無架空線模式下，儲能電池異常",
+    "solution": "1. 降弓狀態下執行TCU錯誤復位。\n2. 無效則執行重開機。\n3. 無效【WD1】執行列車救援。",
+    "decision": "WD1",
+    [cite_start]"source": "P.7 [cite: 86-89]"
+  },
+  {
+    "id": "T05",
+    "system": "牽引系統",
+    "symptom": "主控制器操作後無作動 (檔位不同步)",
+    "solution": "1. 若能同步且能到停機檔位：Key-Off【WD1】並換端。\n2. 若完全不同步：【WD1】並換端，待維修人員關閉斷路器。\n3. 換端後依列車位置進行收車調度(如V01-V05上行退回V01待避)。",
+    "decision": "WD1",
+    [cite_start]"source": "P.8 [cite: 94-104]"
+  },
+  {
+    "id": "T06",
+    "system": "牽引系統",
+    "symptom": "無牽引動力，總故障燈未亮紅燈",
+    "solution": "1. 按壓「TCU錯誤復位」。\n2. 授權按壓「ATP Bypass」至端點站執行降弓重開機。\n3. 若無法行駛則直接重開機。\n4. 重開機無效【WD1】。",
+    "decision": "WD1",
+    [cite_start]"source": "P.9 [cite: 109-119]"
+  },
+  {
+    "id": "B01",
+    "system": "煞車系統",
+    "symptom": "CMS顯示轉向架ERR、E1+SE或E1+BCU紅燈",
+    "solution": "1. 單一組異常：CMS隔離轉向架，按「煞車解除」以主線模式移動至端點站【WD1】。\n2. 兩組以上或隔離無效：優先執行重開機。\n3. 若無法移動：按「煞車解除」及「降級模式」，以10kph移動至下游車站或當站【WD1】。\n4. 最後手段：按壓「零速度」。",
+    "decision": "WD1",
+    [cite_start]"source": "P.11 [cite: 130-147]"
+  },
+  {
+    "id": "B02",
+    "system": "煞車系統",
+    "symptom": "CMS顯示E1煞車圖示",
+    "solution": "1. 若有轉向架ERR則優先處理轉向架異常。\n2. 重置主控制器4-5次。\n3. 站間：授權按壓「降級模式」以10kph至下游車站重開機。\n4. 站內/無法移動：直接重開機。\n5. 無效【WD1】。",
+    "decision": "WD1",
+    [cite_start]"source": "P.12 [cite: 154-171]"
+  },
+  {
+    "id": "B03",
+    "system": "煞車系統",
+    "symptom": "CMS顯示EE煞車圖示 (ATP煞車)",
+    "solution": "1. 若ATP顯示異常代碼依ATP流程；若ATP白屏授權「ATP Bypass」至端點站重開機。\n2. 若ATP正常，將操縱桿推至牽引檔位到底3-5秒後拉回。\n3. 站間：按「降級模式」移動至下游車站重開機。\n4. 無效【WD1】。",
+    "decision": "WD1",
+    [cite_start]"source": "P.13 [cite: 178-204]"
+  },
+  {
+    "id": "B04",
+    "system": "煞車系統",
+    "symptom": "CMS顯示煞車釋放故障",
+    "solution": "1. 輔助液壓單元協助釋放【WD2】。\n2. 若輔助液壓單元故障【WD1】。",
+    "decision": "WD1, WD2",
+    [cite_start]"source": "P.14 [cite: 211-213]"
+  },
+  {
+    "id": "B05",
+    "system": "煞車系統",
+    "symptom": "CMS顯示電磁軌道煞車故障",
+    "solution": "提醒司機員留意列車速度【WD2】。",
+    "decision": "WD2",
+    [cite_start]"source": "P.15 [cite: 218-219]"
+  },
+  {
+    "id": "B06",
+    "system": "煞車系統",
+    "symptom": "CMS顯示電韌故障",
+    "solution": "1. 按「TCU錯誤復位」。\n2. 故障1/4且黃燈：限速40kph【WD2】。\n3. 故障1/2且紅燈：限速30kph，下站清車【WD1】。",
+    "decision": "WD1, WD2",
+    [cite_start]"source": "P.16 [cite: 224-228]"
+  },
+  {
+    "id": "B07",
+    "system": "煞車系統",
+    "symptom": "換端後，CMS顯示SE煞車圖示",
+    "solution": "1. 重置安全煞車旋鈕。\n2. 換端重置。\n3. 無效則重開機。\n4. 仍無效【WD1】。",
+    "decision": "WD1",
+    [cite_start]"source": "P.17 [cite: 233-237]"
+  },
+  {
+    "id": "B08",
+    "system": "煞車系統",
+    "symptom": "煞車異常，無正常煞車作動",
+    "solution": "1. 【WD1】，指示按「降級模式」。\n2. 機廠模式短距離移動測試電磁軌道煞車。\n3. 若電磁煞車無效：立即按安全/緊急煞車救援。\n4. 若有效：以10kph輔以電磁煞車至端點站。",
+    "decision": "WD1",
+    [cite_start]"source": "P.18 [cite: 245-253]"
+  },
+  {
+    "id": "B09",
+    "system": "煞車系統",
+    "symptom": "CMS顯示ABS作動且列車無法移動",
+    "solution": "1. 再次試推主控制器。\n2. 倒車模式退行30-50公分後切回主線模式。\n3. 無效則換端至上游車站【WD1】。",
+    "decision": "WD1",
+    [cite_start]"source": "P.19 [cite: 258-261]"
+  },
+  {
+    "id": "P01",
+    "system": "供電系統",
+    "symptom": "儲能電池溫度過高",
+    "solution": "1. 若ESS模式動力不足，關閉空調，按「TCU錯誤復位」。\n2. 若溫度超過38度【WD2】(40度以上跳脫)。",
+    "decision": "WD2",
+    [cite_start]"source": "P.21 [cite: 271-276]"
+  },
+  {
+    "id": "P02",
+    "system": "供電系統",
+    "symptom": "儲能電池電量低於40%",
+    "solution": "1. 架空線模式下確認是否回充。\n2. 可恢復40%以上【WD3】，無法恢復【WD2】。",
+    "decision": "WD2, WD3",
+    [cite_start]"source": "P.22 [cite: 281-283]"
+  },
+  {
+    "id": "P03",
+    "system": "供電系統",
+    "symptom": "儲能電池裝置故障，無架空線區失去動力",
+    "solution": "1. 降弓狀態下按「TCU錯誤復位」。\n2. 無效則重開機。\n3. 無效則【WD1】。",
+    "decision": "WD1",
+    [cite_start]"source": "P.23 [cite: 288-292]"
+  },
+  {
+    "id": "P04",
+    "system": "供電系統",
+    "symptom": "蓄電池24V充電機離線，列車可移動",
+    "solution": "1. 按「TCU錯誤復位」。\n2. 1顆離線：【WD2】。\n3. 2顆離線：關閉空調照明，依位置(如下行過濱海沙崙)行駛至下游車站或機廠【WD1】。",
+    "decision": "WD1, WD2",
+    [cite_start]"source": "P.24 [cite: 297-306]"
+  },
+  {
+    "id": "P05",
+    "system": "供電系統",
+    "symptom": "蓄電池24V充電機離線，列車無法移動",
+    "solution": "1. 確認行車模式為主線，關閉空調照明。\n2. 按「TCU錯誤復位」。\n3. 無效則重開機。\n4. 再無效【WD1】重開機後立即投入ESS模式。",
+    "decision": "WD1",
+    [cite_start]"source": "P.25 [cite: 312-318]"
+  },
+  {
+    "id": "P06",
+    "system": "供電系統",
+    "symptom": "380V跳脫，列車無法移動",
+    "solution": "1. 按「TCU錯誤復位」。\n2. 執行手動升降弓一次。\n3. 切關閉模式降弓，嘗試投入ESS模式，行駛至端點站或反向回廠【WD1】。",
+    "decision": "WD1",
+    [cite_start]"source": "P.26 [cite: 323-330]"
+  },
+  {
+    "id": "PT01",
+    "system": "集電弓系統",
+    "symptom": "集電弓無法上升",
+    "solution": "1. 重選「架空線模式」，按「TCU錯誤復位」。\n2. 無效則重開機。\n3. 無效則轉關閉模式手動降弓，再切主線選「無架空線模式」，以ESS行駛至端點站或回廠【WD1】。",
+    "decision": "WD1",
+    [cite_start]"source": "P.28 [cite: 340-352]"
+  },
+  {
+    "id": "PT02",
+    "system": "集電弓系統",
+    "symptom": "集電弓無法下降",
+    "solution": "1. 選「無架空線模式」，按「TCU錯誤復位」。\n2. 若未下降但投入ESS：【WD1】，通知支援人力路口警戒，限速5kph通過路口。\n3. 若無法投入ESS：重開機。",
+    "decision": "WD1",
+    [cite_start]"source": "P.29 [cite: 357-373]"
+  },
+  {
+    "id": "PT04",
+    "system": "集電弓系統",
+    "symptom": "集電弓多次自動降弓",
+    "solution": "手動升弓。單趟發生2次或全日4次：【WD2】。",
+    "decision": "WD2",
+    [cite_start]"source": "P.31 [cite: 387-391]"
+  },
+  {
+    "id": "PT05",
+    "system": "集電弓系統",
+    "symptom": "集電弓未自動降弓，列車無牽引動力",
+    "solution": "1. 重選「架空線模式」，按「TCU錯誤復位」，再選「無架空線模式」。\n2. 授權「降級模式」，選「無架空線模式」。\n3. 若能移動至可升弓處，選「架空線模式」。",
+    "decision": "WD1",
+    [cite_start]"source": "P.32 [cite: 396-403]"
+  },
+  {
+    "id": "PT06",
+    "system": "集電弓系統",
+    "symptom": "架空線斷電時，集電弓仍為升弓狀態",
+    "solution": "1. 轉關閉模式，按CMS「降弓」(需50秒)。\n2. 無效授權按壓應急按鈕「HVOFF」。\n3. 完成後切主線模式，按「TCU錯誤復位」，選「無架空線模式」。",
+    "decision": "無",
+    [cite_start]"source": "P.33 [cite: 408-412]"
+  },
+  {
+    "id": "AC01",
+    "system": "空調系統",
+    "symptom": "任一組以上空調未啟動",
+    "solution": "1. 取消降低風速，按「TCU錯誤復位」及CMS「重置空調」，關閉空調10秒後重開。\n2. 1組未啟動【WD2】。\n3. 2組以上未啟動：確認應急按鈕是否按壓。無按壓則【WD2】收車後執行降弓重開機流程。",
+    "decision": "WD2",
+    [cite_start]"source": "P.35 [cite: 436-441]"
+  },
+  {
+    "id": "AC02",
+    "system": "空調系統",
+    "symptom": "空調為降級模式或不制冷",
+    "solution": "1. CMS「重置空調」，按「TCU錯誤復位」。\n2. 關閉空調10秒後重開。\n3. 無效【WD1】，收車後執行降弓重開機流程。",
+    "decision": "WD1",
+    [cite_start]"source": "P.36 [cite: 447-452]"
+  },
+  {
+    "id": "AC03",
+    "system": "空調系統",
+    "symptom": "駕駛室空調故障或未啟動",
+    "solution": "1. CMS「重置空調」，按「TCU錯誤復位」。\n2. 若溫度明顯偏高【WD2】。",
+    "decision": "WD2",
+    [cite_start]"source": "P.37 [cite: 457-462]"
+  },
+  {
+    "id": "AC04",
+    "system": "空調系統",
+    "symptom": "車廂/駕駛室煙霧感測器作動",
+    "solution": "1. 確認有無火災(有則依火災程序)。\n2. 無火災：重置感測器，無效則隔離【WD3】。\n3. 同車廂皆作動通知維修【WD2】。\n4. 有燒焦味至端點站【WD1】。",
+    "decision": "WD1, WD2, WD3",
+    [cite_start]"source": "P.38 [cite: 467-474]"
+  },
+  {
+    "id": "AC05",
+    "system": "空調系統",
+    "symptom": "駕駛室玻璃無法除霧",
+    "solution": "1. 調整空調溫度。\n2. 霧氣消散【WD3】；影響視線【WD1】。",
+    "decision": "WD1, WD3",
+    [cite_start]"source": "P.39 [cite: 479-485]"
+  },
+  {
+    "id": "AC06",
+    "system": "空調系統",
+    "symptom": "車廂冷凝水滴落",
+    "solution": "1. 調升溫度2度觀察。\n2. 請人員上車，指示司機員換端協助擦拭。",
+    "decision": "無",
+    [cite_start]"source": "P.40 [cite: 490-495]"
+  },
+  {
+    "id": "CMS01",
+    "system": "CMS系統",
+    "symptom": "CMS異常無法使用 (黑屏/無反應)",
+    "solution": "1. 切換關閉模式Key off/on。\n2. 無效執行降弓重開機。\n3. 有畫面有動力：繼續行駛。\n4. 無畫面有動力：【WD1】清車後過站不停收車。\n5. 無畫面無動力：授權「降級模式」至端點站【WD2】；仍無動力則【WD1】救援。",
+    "decision": "WD1, WD2",
+    [cite_start]"source": "P.42 [cite: 505-522]"
+  },
+  {
+    "id": "CMS02",
+    "system": "CMS系統",
+    "symptom": "列車網路異常 (TCMS顯示2個以上設備紅燈)",
+    "solution": "1. 有動力：【WD2】端點站收車。\n2. 無動力：當站清車【WD1】，授權「降級模式」移動。仍無效則重開機。",
+    "decision": "WD1, WD2",
+    [cite_start]"source": "P.43 [cite: 529-536]"
+  },
+  {
+    "id": "DCI01",
+    "system": "DCI系統",
+    "symptom": "DCI無法登入(於端點站)",
+    "solution": "1. 換端Key on/off確認。\n2. 維修人員重置斷路器。\n3. 無效【WD2】收車後重開機。",
+    "decision": "WD2",
+    [cite_start]"source": "P.45 [cite: 546-549]"
+  },
+  {
+    "id": "DCI02",
+    "system": "DCI系統",
+    "symptom": "DCI無法觸控",
+    "solution": "1. 切關閉模式Key off/on。\n2. 維修人員重置斷路器。\n3. 無效【WD2】收車後重開機。",
+    "decision": "WD2",
+    [cite_start]"source": "P.46 [cite: 554-557]"
+  },
+  {
+    "id": "DCI03",
+    "system": "DCI系統",
+    "symptom": "DCI建議路徑跳脫",
+    "solution": "1. 切關閉模式Key off/on。\n2. 維修人員重置斷路器。\n3. 無效【WD2】收車後重開機。",
+    "decision": "WD2",
+    [cite_start]"source": "P.47 [cite: 562-565]"
+  },
+  {
+    "id": "EB01",
+    "system": "緊急煞車",
+    "symptom": "客室緊急煞車把手被拉下",
+    "solution": "1. 授權司機員以三角鑰匙復歸。\n2. 若發生E1則執行E1故排。",
+    "decision": "無",
+    [cite_start]"source": "P.49 [cite: 573-577]"
+  },
+  {
+    "id": "EB02",
+    "system": "緊急煞車",
+    "symptom": "客室緊急開門裝置被拉下",
+    "solution": "1. 授權司機員將車門關妥。\n2. 以三角鑰匙隔離車門後復歸。\n3. 若發生E1則執行E1故排。",
+    "decision": "無",
+    [cite_start]"source": "P.50 [cite: 583-589]"
+  },
+  {
+    "id": "EB03",
+    "system": "緊急煞車",
+    "symptom": "客室緊急動作按鈕啟動",
+    "solution": "1. CCTV確認是開門裝置或煞車把手。\n2. 若發生E1則執行E1故排。",
+    "decision": "無",
+    [cite_start]"source": "P.51 [cite: 594-598]"
+  },
+  {
+    "id": "EB04",
+    "system": "緊急煞車",
+    "symptom": "倒滑導致EB1/2啟動",
+    "solution": "嘗試執行「EB1/2作動，列車無牽引動力」故排。",
+    "decision": "無",
+    [cite_start]"source": "P.52 [cite: 604-605]"
+  },
+  {
+    "id": "EB05",
+    "system": "緊急煞車",
+    "symptom": "主控制器移至緊急煞車檔位 (EB3)",
+    "solution": "1. 移至停機檔位放開DSD再回煞車檔位。\n2. 站間：授權「降級模式」嘗試移動至下游車站重開機。\n3. 站內/無法移動：執行降弓重開機。\n4. 無效【WD1】。",
+    "decision": "WD1",
+    [cite_start]"source": "P.53 [cite: 610-620]"
+  },
+  {
+    "id": "EB07",
+    "system": "緊急煞車",
+    "symptom": "緊急煞車無法解除 (DSD故障)",
+    "solution": "授權按壓「降級模式」【WD1】，以降級模式10kph移至機廠或待避空間。",
+    "decision": "WD1",
+    [cite_start]"source": "P.54 [cite: 627-629]"
+  },
+  {
+    "id": "OP01",
+    "system": "列車操作",
+    "symptom": "雨刷無法作動或故障",
+    "solution": "1. 未影響視線或非主控端【WD2】。\n2. 視線不清且為主控端【WD1】。\n3. 若斷裂下垂，指示司機員(免穿安全裝備)下車固定(限時2分鐘)。",
+    "decision": "WD1, WD2",
+    [cite_start]"source": "P.56 [cite: 639-647]"
+  },
+  {
+    "id": "OP02",
+    "system": "列車操作",
+    "symptom": "列車警鈴故障",
+    "solution": "1. 改用操控台喇叭按鈕【WD2】。\n2. 若喇叭亦失效【WD1】。",
+    "decision": "WD1, WD2",
+    [cite_start]"source": "P.57 [cite: 651-653]"
+  },
+  {
+    "id": "ATP01",
+    "system": "輔助速限裝置",
+    "symptom": "超速5公里 (E3516)",
+    "solution": "1. 停機放開DSD，按ATP重置鈕2秒。\n2. 無效則Key-off/on。\n3. 無效授權「ATP Bypass」。平面上行/高架段至端點站復歸；平面下行至V08月台2復歸。\n4. 仍異常：再次Bypass至端點站【WD2】重開機。",
+    "decision": "WD2",
+    [cite_start]"source": "P.59 [cite: 662-676]"
+  },
+  {
+    "id": "ATP02",
+    "system": "輔助速限裝置",
+    "symptom": "讀取錯誤 (E3904)",
+    "solution": "1. 停機放開DSD，按ATP重置鈕2秒。\n2. 無效則Key-off/on。\n3. 無效授權「ATP Bypass」。平面上行/高架段至端點站復歸；平面下行至V08月台2復歸。\n4. 仍異常：再次Bypass至端點站【WD2】重開機。",
+    "decision": "WD2",
+    [cite_start]"source": "P.60 [cite: 684-698]"
+  },
+  {
+    "id": "ATP03",
+    "system": "輔助速限裝置",
+    "symptom": "零速度下超速 (E390340)",
+    "solution": "1. 確認是否按壓「零速度」按鈕(需復歸)。\n2. 其餘流程同E3516。",
+    "decision": "WD2",
+    [cite_start]"source": "P.61 [cite: 705-723]"
+  },
+  {
+    "id": "ATP04",
+    "system": "輔助速限裝置",
+    "symptom": "ATP顯示 FAULT",
+    "solution": "同 E3516 流程。",
+    "decision": "WD2",
+    [cite_start]"source": "P.62 [cite: 730-744]"
+  },
+  {
+    "id": "ATP05",
+    "system": "輔助速限裝置",
+    "symptom": "ATP顯示 OFF",
+    "solution": "同 E3516 流程。",
+    "decision": "WD2",
+    [cite_start]"source": "P.63 [cite: 751-765]"
+  },
+  {
+    "id": "ATP06",
+    "system": "輔助速限裝置",
+    "symptom": "CMS出現 AS/AE 煞車圖示",
+    "solution": "1. 先重置ATP。\n2. 無效則授權「ATP Bypass」。\n3. 復歸後仍異常：再次Bypass至端點站【WD2】重開機。",
+    "decision": "WD2",
+    [cite_start]"source": "P.64 [cite: 772-786]"
+  },
+  {
+    "id": "ATP07",
+    "system": "輔助速限裝置",
+    "symptom": "其他異常代碼",
+    "solution": "1. 部分代碼(如E3405等)先重置/重開機。\n2. 部分代碼(E3901等)直接授權「ATP Bypass」並依位置復歸。",
+    "decision": "WD2",
+    [cite_start]"source": "P.65 [cite: 794-808]"
+  },
+  {
+    "id": "CCTV01",
+    "system": "CCTV系統",
+    "symptom": "駕駛室後視鏡螢幕故障",
+    "solution": "1. CMS重置。\n2. 輔助觀看有效【WD3】。\n3. 無法觀看且重置無效：指示司機員口播【WD2】。",
+    "decision": "WD2, WD3",
+    [cite_start]"source": "P.67 [cite: 819-822]"
+  },
+  {
+    "id": "CCTV02",
+    "system": "CCTV系統",
+    "symptom": "車廂CCTV故障",
+    "solution": "1. 重置斷路器。\n2. 不同車廂【WD3】；同一車廂【WD2】。",
+    "decision": "WD2, WD3",
+    [cite_start]"source": "P.68 [cite: 827-833]"
+  },
+  {
+    "id": "DR01",
+    "system": "車門系統",
+    "symptom": "1組以上車門離線或故障",
+    "solution": "1. CMS「全部開門/關門」。\n2. 無效現場隔離(確認無蜂鳴/紅燈亮/地燈滅)。\n3. 隔離2組以下【WD2】；3組以上或同側第2/3門【WD1】。\n4. 無法隔離或無法移動【WD1】按「上下車門」移動。",
+    "decision": "WD1, WD2",
+    [cite_start]"source": "P.70 [cite: 858-883]"
+  },
+  {
+    "id": "DR02",
+    "system": "車門系統",
+    "symptom": "3組(含)以下車門無法開啟",
+    "solution": "流程同 DR-01。",
+    "decision": "WD1, WD2",
+    [cite_start]"source": "P.71 [cite: 892-916]"
+  },
+  {
+    "id": "DR03",
+    "system": "車門系統",
+    "symptom": "單側4組車門無法開啟或授權",
+    "solution": "1. CMS「全部開門/關門」。\n2. 收回授權，按「零速度」再授權。\n3. 無效則授權操作「第一道車門」。\n4. 可開啟則清車；不可開啟手動開門清車【WD1】。",
+    "decision": "WD1",
+    [cite_start]"source": "P.72 [cite: 925-937]"
+  },
+  {
+    "id": "DR04",
+    "system": "車門系統",
+    "symptom": "1組以上車門無法關閉",
+    "solution": "1. 收回授權。\n2. CMS「全部開門/關門」。\n3. 現場手動關閉/隔離 (流程同DR-01)。",
+    "decision": "WD1, WD2",
+    [cite_start]"source": "P.73 [cite: 943-967]"
+  },
+  {
+    "id": "DR05",
+    "system": "車門系統",
+    "symptom": "換端時，非月台側車門異常授權",
+    "solution": "1. 於主控端授權月台側。\n2. 返回非主控端將車門旋鈕復歸中立，確認授權按鈕復歸。",
+    "decision": "無",
+    [cite_start]"source": "P.74 [cite: 974-977]"
+  },
+  {
+    "id": "L01",
+    "system": "照明系統",
+    "symptom": "頭燈1個不亮",
+    "solution": "白天【WD3】；夜間【WD2】。",
+    "decision": "WD2, WD3",
+    [cite_start]"source": "P.76 [cite: 986-988]"
+  },
+  {
+    "id": "L02",
+    "system": "照明系統",
+    "symptom": "頭燈2個均不亮",
+    "solution": "1. 遠燈會亮開啟遠燈【WD2】。\n2. 皆不亮：白天【WD2】，夜間【WD1】。",
+    "decision": "WD1, WD2",
+    [cite_start]"source": "P.77 [cite: 993-999]"
+  },
+  {
+    "id": "L03",
+    "system": "照明系統",
+    "symptom": "尾燈2個均不亮",
+    "solution": "1. 後霧燈會亮開啟後霧燈【WD3】。\n2. 有安全顧慮【WD1】。",
+    "decision": "WD1, WD3",
+    [cite_start]"source": "P.78 [cite: 1004-1006]"
+  },
+  {
+    "id": "PIS01",
+    "system": "旅客服務系統",
+    "symptom": "列車廣播系統故障",
+    "solution": "1. 改以口播至端點站。\n2. 系統重置。\n3. 口播正常【WD3】；異常【WD2】。",
+    "decision": "WD2, WD3",
+    [cite_start]"source": "P.80 [cite: 1015-1022]"
+  },
+  {
+    "id": "PIS02",
+    "system": "旅客服務系統",
+    "symptom": "PIDS/TMDS無法顯示/錯誤",
+    "solution": "1. 端點站重置。\n2. 1個以上錯誤【WD2】；全部無顯示【WD2】。",
+    "decision": "WD2",
+    [cite_start]"source": "P.81 [cite: 1027-1033]"
+  },
+  {
+    "id": "PIS03",
+    "system": "旅客服務系統",
+    "symptom": "緊急對講機故障",
+    "solution": "1. 端點站重置。\n2. 2個以上不同車廂【WD3】；2個以上同車廂【WD2】。",
+    "decision": "WD2, WD3",
+    [cite_start]"source": "P.82 [cite: 1038-1044]"
+  },
+  {
+    "id": "CB01",
+    "system": "車廂車體",
+    "symptom": "明顯抖動",
+    "solution": "維修確認。不影響安全【WD3】；有疑慮【WD2】。",
+    "decision": "WD2, WD3",
+    [cite_start]"source": "P.84 [cite: 1051-1054]"
+  },
+  {
+    "id": "CB02",
+    "system": "車廂車體",
+    "symptom": "持續冒煙或爆裂巨響",
+    "solution": "【WD1】，待維修人員隨車移回機廠。",
+    "decision": "WD1",
+    [cite_start]"source": "P.85 [cite: 1059-1060]"
+  },
+  {
+    "id": "CB03",
+    "system": "車廂車體",
+    "symptom": "列車出現不尋常異音",
+    "solution": "維修確認。嚴重/影響服務【WD2】；無立即影響【WD3】。",
+    "decision": "WD2, WD3",
+    [cite_start]"source": "P.86 [cite: 1065-1070]"
+  },
+  {
+    "id": "CB04",
+    "system": "車廂車體",
+    "symptom": "車間通道或連結器異音",
+    "solution": "維修確認。嚴重/影響服務【WD2】；無立即影響【WD3】。",
+    "decision": "WD2, WD3",
+    [cite_start]"source": "P.87 [cite: 1075-1080]"
+  },
+  {
+    "id": "CB05",
+    "system": "車廂車體",
+    "symptom": "車輪不尋常之異音",
+    "solution": "維修確認。嚴重/影響服務【WD2】；無立即影響【WD3】。",
+    "decision": "WD2, WD3",
+    [cite_start]"source": "P.88 [cite: 1085-1090]"
+  },
+  {
+    "id": "CB06",
+    "system": "車廂車體",
+    "symptom": "車廂內部破損漏水",
+    "solution": "1. 指派人員上車警戒【WD2】並至端點站換車。\n2. 嚴重者【WD1】。",
+    "decision": "WD1, WD2",
+    [cite_start]"source": "P.89 [cite: 1096-1102]"
+  },
+  {
+    "id": "CB07",
+    "system": "車廂車體",
+    "symptom": "車身傾斜、有燒焦味",
+    "solution": "維修確認。持續但不影響安全【WD2】；嚴重【WD1】。",
+    "decision": "WD1, WD2",
+    [cite_start]"source": "P.90 [cite: 1107-1112]"
+  },
+  {
+    "id": "CB08",
+    "system": "車廂車體",
+    "symptom": "車間通道踏板突起/間隙",
+    "solution": "維修確認。嚴重【WD2】；無影響【WD3】。",
+    "decision": "WD2, WD3",
+    [cite_start]"source": "P.91 [cite: 1117-1122]"
+  },
+  {
+    "id": "CB09",
+    "system": "車廂車體",
+    "symptom": "列車車廂玻璃破裂",
+    "solution": "1. 無安全顧慮(裂痕)【WD2】。\n2. 駕駛室/客室有安全顧慮(破裂掉落)：依位置執行清車收車【WD1】。",
+    "decision": "WD1, WD2",
+    [cite_start]"source": "P.92 [cite: 1127-1137]"
+  },
+  {
+    "id": "AFC01",
+    "system": "AFC系統",
+    "symptom": "候車站AFC設備異常",
+    "solution": "1. 非營運時間：遠端重開機。\n2. 營運時間：異常離線5分鐘未恢復通知維修。",
+    "decision": "無",
+    [cite_start]"source": "P.95 [cite: 1154-1161]"
+  },
+  {
+    "id": "SIG01",
+    "system": "號通系統",
+    "symptom": "會車區異常",
+    "solution": "1. ITMS遠端設定。\n2. UCS重啟。\n3. 指示司機員下車扳轉 (V09先指示1月台列車扳轉)。",
+    "decision": "無",
+    [cite_start]"source": "P.97 [cite: 1170-1174]"
+  },
+  {
+    "id": "SIG02",
+    "system": "號通系統",
+    "symptom": "路口號誌異常",
+    "solution": "1. 確認ITMS上TLC為紅色。\n2. 嘗試重置TLC。\n3. 顯示停電通知發電機供電；非供電異常通知維修重置。",
+    "decision": "無",
+    [cite_start]"source": "P.98 [cite: 1178-1183]"
+  },
+  {
+    "id": "SIG03",
+    "system": "號通系統",
+    "symptom": "ITMS異常無法使用",
+    "solution": "1. 使用其他席位。\n2. 重啟ITMS/SCADA。\n3. 使用網路版列車偵測系統(Real-time)確認位置。",
+    "decision": "無",
+    [cite_start]"source": "P.99 [cite: 1190-1195]"
+  },
+  {
+    "id": "SIG04",
+    "system": "號通系統",
+    "symptom": "無法以TETRA聯繫列車",
+    "solution": "1. 改以ITMS呼叫車機。\n2. 通知司機員至月台按壓對講機回報。",
+    "decision": "無",
+    [cite_start]"source": "P.100 [cite: 1200-1203]"
+  },
+  {
+    "id": "SIG05",
+    "system": "號通系統",
+    "symptom": "列車定位異常",
+    "solution": "1. 全線異常查修ITMS；單一查修車載。\n2. CCTV/白板輔助監控。\n3. 指示列車到站回報。",
+    "decision": "無",
+    [cite_start]"source": "P.101 [cite: 1208]"
+  },
+  {
+    "id": "SIG06",
+    "system": "號通系統",
+    "symptom": "SCADA異常",
+    "solution": "1. 通知查修。\n2. 確認CMS/AFC狀況。\n3. 行控中心確認工作站狀況。",
+    "decision": "無",
+    [cite_start]"source": "P.102 [cite: 1211]"
+  },
+  {
+    "id": "SIG07",
+    "system": "號通系統",
+    "symptom": "會車區路徑未自動成立",
+    "solution": "TC手動設定前須回報CC確認方向及程序無誤。",
+    "decision": "無",
+    [cite_start]"source": "P.103 [cite: 1214]"
+  },
+  {
+    "id": "CPL01",
+    "system": "土建供電照明",
+    "symptom": "候車站玻璃毀損",
+    "solution": "1. 確認有無破裂掉落及影響營運。\n2. 通知土建、捷警。\n3. 捷警勘驗後進行防護。",
+    "decision": "無",
+    [cite_start]"source": "P.105 [cite: 1223]"
+  },
+  {
+    "id": "CPL02",
+    "system": "土建供電照明",
+    "symptom": "候車站電力異常 (壓降)",
+    "solution": "1. 確認UPS啟動及設備影響範圍。\n2. 確認電梯有無困人。\n3. 確認照明/PIDS/AFC。",
+    "decision": "無",
+    [cite_start]"source": "P.106 [cite: 1226]"
+  },
+  {
+    "id": "CPL03",
+    "system": "土建供電照明",
+    "symptom": "遠端照明無法正常開啟",
+    "solution": "1. 重啟二線控介面/工作站。\n2. 通知維修人員至現場手動開啟。",
+    "decision": "無",
+    [cite_start]"source": "P.107 [cite: 1229]"
+  },
+  {
+    "id": "CPL04",
+    "system": "土建供電照明",
+    "symptom": "電力轉供注意事項",
+    "solution": "架空線單迴路供電轉雙迴路時，列車不需降弓投入ESS。",
+    "decision": "無",
+    [cite_start]"source": "P.108 [cite: 1232]"
+  },
+  {
+    "id": "AB01",
+    "system": "異常事故",
+    "symptom": "路口事故(列車受撞)",
+    "solution": "1. 停車安撫，通知警消。\n2. 清車，啟動局部運轉。\n3. 有人受傷不可移動；無人受傷經警方拍照後移動。\n4. 30分鐘以上發布退票。",
+    "decision": "無",
+    [cite_start]"source": "P.111 [cite: 1263]"
+  },
+  {
+    "id": "AB02",
+    "system": "異常事故",
+    "symptom": "路口事故(無列車受撞)",
+    "solution": "1. 通知警消，CCTV確認是否侵入動態包絡線。\n2. 受影響列車停於非路口處下車確認。\n3. 若無法移動車輛：10分鐘內降級運轉。",
+    "decision": "無",
+    [cite_start]"source": "P.112 [cite: 1264]"
+  },
+  {
+    "id": "AB03",
+    "system": "異常事故",
+    "symptom": "地震 2-3級",
+    "solution": "全線停車，廣播。限速20kph車巡。",
+    "decision": "無",
+    [cite_start]"source": "P.113 [cite: 1265]"
+  },
+  {
+    "id": "AB04",
+    "system": "異常事故",
+    "symptom": "地震 4級以上",
+    "solution": "1. 全線停車，廣播。\n2. 4級：20kph進站清車，車巡。\n3. 5級：5kph進站清車，步巡。",
+    "decision": "WD1",
+    [cite_start]"source": "P.114 [cite: 1266]"
+  },
+  {
+    "id": "AB05",
+    "system": "異常事故",
+    "symptom": "旅客於列車上受傷",
+    "solution": "1. 通知調閱CCTV。\n2. 明顯出血：移至月台，通知救護。",
+    "decision": "無",
+    [cite_start]"source": "P.118 [cite: 1270]"
+  },
+  {
+    "id": "AB06",
+    "system": "異常事故",
+    "symptom": "防洪防颱",
+    "solution": "1. 瞬間風力8級：30kph。\n2. 平均6級或瞬間9級：暫停營運。\n3. 積水60mm：避開或慢速通過。",
+    "decision": "無",
+    [cite_start]"source": "P.119-121 [cite: 1271-1273]"
+  },
+  {
+    "id": "AB07",
+    "system": "異常事故",
+    "symptom": "機廠內斷電及調車",
+    "solution": "1. 斷電區間步巡及放置降弓三角錐。\n2. 調移車需確認降弓。\n3. 進出斷電區需移除三角錐。",
+    "decision": "無",
+    [cite_start]"source": "P.122 [cite: 1274]"
+  },
+  {
+    "id": "AB08",
+    "system": "異常事故",
+    "symptom": "降級運轉",
+    "solution": "1. 分配無線電頻道(TC1/TC2)。\n2. 旅客受困10分鐘發送一次券。\n3. 延誤30分鐘啟動公車接駁。",
+    "decision": "無",
+    [cite_start]"source": "P.123 [cite: 1275]"
+  },
+  {
+    "id": "AB09",
+    "system": "異常事故",
+    "symptom": "高架站體受撞",
+    "solution": "1. 立即停車。\n2. 通知維修確認。\n3. 當下發生限速20kph車巡；事後獲知限速40kph車巡。",
+    "decision": "無",
+    [cite_start]"source": "P.124 [cite: 1276]"
+  },
+  {
+    "id": "AB10",
+    "system": "異常事故",
+    "symptom": "報修通報",
+    "solution": "確認玻璃破裂或設備失竊是否已報修，避免重複通報捷警。",
+    "decision": "無",
+    [cite_start]"source": "P.125 [cite: 1277]"
+  },
+  {
+    "id": "AB11",
+    "system": "異常事故",
+    "symptom": "雨勢過大",
+    "solution": "1. 雨刷無效則停於路口前。\n2. 通知人力警戒路口，慢速通過。",
+    "decision": "無",
+    [cite_start]"source": "P.126 [cite: 1278]"
+  },
+  {
+    "id": "AB12",
+    "system": "異常事故",
+    "symptom": "正線/機廠降弓區域",
+    "solution": "進出駐車廠、土軌場、尾軌區，皆須降弓(無架空線模式)。",
+    "decision": "無",
+    [cite_start]"source": "P.127 [cite: 1279]"
+  },
+  {
+    "id": "AB13",
+    "system": "異常事故",
+    "symptom": "失控列車",
+    "solution": "1. 無線電無回應且持續行駛。\n2. 執行斷電。\n3. 下游列車疏散。",
+    "decision": "無",
+    [cite_start]"source": "P.128 [cite: 1280]"
+  },
+  {
+    "id": "AB14",
+    "system": "異常事故",
+    "symptom": "機廠內調移車",
+    "solution": "通過環廠區25公里速限牌前，需確認前方無列車。",
+    "decision": "無",
+    [cite_start]"source": "P.129 [cite: 1281]"
+  },
+  {
+    "id": "AB15",
+    "system": "異常事故",
+    "symptom": "人員入侵",
+    "solution": "1. 通知捷警/站長(帶裁罰書)。\n2. 藍海橋入侵：首班車停車確認，若在包絡線內持續鳴笛或降級運轉。",
+    "decision": "無",
+    [cite_start]"source": "P.130 [cite: 1282]"
+  },
+  {
+    "id": "AB16",
+    "system": "異常事故",
+    "symptom": "藍海線收車返廠",
+    "solution": "特殊狀況可由V28 2月台直接至V10 1月台收車 (需人力警戒路口)。",
+    "decision": "WD1, WD2",
+    [cite_start]"source": "P.131 [cite: 1283]"
+  },
+  {
+    "id": "AB17",
+    "system": "異常事故",
+    "symptom": "現場指揮官",
+    "solution": "1. 列車事故由司機員擔任臨時指揮官。\n2. 後續由車班領班交接。",
+    "decision": "無",
+    [cite_start]"source": "P.132 [cite: 1284-1286]"
+  },
+  {
+    "id": "AB18",
+    "system": "異常事故",
+    "symptom": "火災告警",
+    "solution": "1. 一般火警：確認BMS。\n2. 氣體滅火(NOVEC)：檢查房門溫度，高溫手動擊發；已擊發禁止進入。",
+    "decision": "無",
+    [cite_start]"source": "P.135 [cite: 1287]"
+  }
+]

@@ -1,0 +1,14 @@
+# 環境變數與金鑰 (絕對要忽略)
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Python 快取與編譯檔
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 系統檔案
+.DS_Store
