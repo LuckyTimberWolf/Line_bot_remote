@@ -19,7 +19,7 @@ from langchain_text_splitters import CharacterTextSplitter
 load_dotenv()
 
 # 2. 取得密鑰與設定
-channel_secret = os.getenv('LINE_CHANNEL_SECRET')
+channel_secret = os.getenv('LINE_CHANNEL_SECRET') 
 channel_access_token = os.getenv('LINE_CHANNEL_ACCESS_TOKEN')
 hf_token = os.getenv('HF_TOKEN')
 
