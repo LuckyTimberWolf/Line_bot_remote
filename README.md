@@ -1,4 +1,4 @@
-# 🚅 RAG Line Bot - 淡海輕軌維修支援助手
+# 🚅 RAG Line Bot - 列車維修支援助手
 
 這是一個結合 **RAG (Retrieval-Augmented Generation)** 技術與 **Line Messaging API** 的智慧問答機器人專案。
 專案使用 **Qwen 2.5 (1.5B)** 作為生成模型，旨在協助處理淡海輕軌的維修與故障排除查詢（如牽引動力故障排除流程）。
